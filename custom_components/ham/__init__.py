@@ -9,6 +9,7 @@ import logging
 from homeassistant.components.switch import DOMAIN as SWITCH_DOMAIN
 from homeassistant.components.input_boolean import DOMAIN as INPUT_BOOLEAN_DOMAIN
 
+from .const import VERSION
 from .const import *
 from .configuration_transformer import HomeAutomationManagerConfigurationTransformer
 from .ham_data import HomeAutomationManagerData
