@@ -6,12 +6,12 @@
         "visit_repo": "https://github.com/elad-bar/ha-ham",
         "changelog": "https://github.com/elad-bar/ha-ham/releases/latest",
         "resources": [
-            "https://https://raw.githubusercontent.com/elad-bar/ha-ham/master/custom_components/ham/binary_sensor.py",
-            "https://https://raw.githubusercontent.com/elad-bar/ha-ham/master/custom_components/ham/configuration_transformer.py",
-            "https://https://raw.githubusercontent.com/elad-bar/ha-ham/master/custom_components/ham/const.py",
-            "https://https://raw.githubusercontent.com/elad-bar/ha-ham/master/custom_components/ham/ham_data.py",
-            "https://https://raw.githubusercontent.com/elad-bar/ha-ham/master/custom_components/ham/sensor.py",
-            "https://https://raw.githubusercontent.com/elad-bar/ha-ham/master/custom_components/ham/services.yaml"
+            "https://raw.githubusercontent.com/elad-bar/ha-ham/master/custom_components/ham/binary_sensor.py",
+            "https://raw.githubusercontent.com/elad-bar/ha-ham/master/custom_components/ham/configuration_transformer.py",
+            "https://raw.githubusercontent.com/elad-bar/ha-ham/master/custom_components/ham/const.py",
+            "https://raw.githubusercontent.com/elad-bar/ha-ham/master/custom_components/ham/ham_data.py",
+            "https://raw.githubusercontent.com/elad-bar/ha-ham/master/custom_components/ham/sensor.py",
+            "https://raw.githubusercontent.com/elad-bar/ha-ham/master/custom_components/ham/services.yaml"
         ]
     }
 }
