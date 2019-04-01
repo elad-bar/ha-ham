@@ -7,14 +7,11 @@ from homeassistant.helpers.dispatcher import async_dispatcher_connect
 from homeassistant.const import (STATE_ON)
 from homeassistant.components.binary_sensor import (BinarySensorDevice)
 from homeassistant.components.binary_sensor import DOMAIN as BINARY_SENSOR_DOMAIN
-from . import (DOMAIN, DATA_HAM, SIGNAL_UPDATE_HAM, DEFAULT_PROFILE, AWAY_PROFILE)
+from .const import *
 
 _LOGGER = logging.getLogger(__name__)
 
 DEPENDENCIES = [DOMAIN]
-
-DEFAULT_ICON = 'pig'
-DEFAULT_DEVICE_CLASS = 'None'
 
 
 def setup_platform(hass, config, add_entities, discovery_info=None):
@@ -30,10 +27,10 @@ def setup_platform(hass, config, add_entities, discovery_info=None):
     _LOGGER.debug('Loading HAM Binary Sensors')
 
     for profile_name in all_profiles:
-        sensor_name = 'Profile {}'.format(profile_name)
+        sensor_name = f'Profile {profile_name}'
         attributes = ham_data.get_profile_data(profile_name)
 
-        _LOGGER.debug('{} - data: {}'.format(sensor_name, attributes))
+        _LOGGER.debug(f'{sensor_name} - data: {attributes}')
 
         sensor = HomeAutomationManagerBinarySensor(sensor_name, attributes, ham_data, hass)
 
@@ -49,11 +46,11 @@ class HomeAutomationManagerBinarySensor(BinarySensorDevice):
         """Initialize the Home Profile sensor."""
 
         self._sensor_name = sensor_name
-        self._name = '{} {}'.format(DOMAIN.upper(), self._sensor_name)
+        self._name = f'{DOMAIN.upper()} {self._sensor_name}'
         self._attributes = attributes
         self._ham_data = ham_data
 
-        binary_sensor_id = '{}.{}'.format(BINARY_SENSOR_DOMAIN, self._name)
+        binary_sensor_id = f'{BINARY_SENSOR_DOMAIN}.{self._name}'
         state_obj = hass.states.get(binary_sensor_id)
 
         self._is_on = state_obj is not None and state_obj.state == STATE_ON
@@ -71,11 +68,11 @@ class HomeAutomationManagerBinarySensor(BinarySensorDevice):
     @property
     def device_class(self):
         """Return the class of this sensor."""
-        return DEFAULT_DEVICE_CLASS
+        return BINARY_SENSOR_DEFAULT_DEVICE_CLASS
 
     @property
     def icon(self):
-        return 'mdi:{}'.format(DEFAULT_ICON)
+        return 'mdi:{}'.format(BINARY_SENSOR_DEFAULT_ICON)
 
     @property
     def is_on(self):
@@ -108,7 +105,7 @@ class HomeAutomationManagerBinarySensor(BinarySensorDevice):
 
             if current_profile is not None and is_away is not None:
                 if sensor_name == current_profile:
-                    _LOGGER.debug('{} equals {}'.format(current_profile, sensor_name))
+                    _LOGGER.debug(f'{current_profile} equals {sensor_name}')
                     is_on = True
 
                 elif sensor_name == DEFAULT_PROFILE:
@@ -120,6 +117,6 @@ class HomeAutomationManagerBinarySensor(BinarySensorDevice):
                     is_on = True
 
                 else:
-                    _LOGGER.debug('{} is inactive'.format(sensor_name))
+                    _LOGGER.debug('{sensor_name} is inactive')
 
                 self._is_on = is_on

@@ -4,27 +4,10 @@ from homeassistant.core import callback
 from homeassistant.helpers.dispatcher import async_dispatcher_connect
 from homeassistant.components.sensor import DOMAIN as SENSOR_DOMAIN
 from homeassistant.helpers.entity import Entity
-from . import (DOMAIN, DATA_HAM, SIGNAL_UPDATE_HAM)
+from .const import *
 
 _LOGGER = logging.getLogger(__name__)
 DEPENDENCIES = [DOMAIN]
-
-DEFAULT_ICON = 'ham'
-DEFAULT_DEVICE_CLASS = 'None'
-
-ATTR_WEEKDAY = 'weekday'
-ATTR_DAY_PART = 'day_part'
-ATTR_CURRENT_PROFILE = 'current_profile'
-ATTR_CURRENT_SCENE = 'current_scene'
-ATTR_STATE = 'state'
-ATTR_ATTRIBUTES = 'attributes'
-
-SENSOR_TYPES = {
-    ATTR_WEEKDAY: ['Weekday', None, 'calendar-week-begin'],
-    ATTR_DAY_PART: ['Current Day Part', None, 'weather-night'],
-    ATTR_CURRENT_PROFILE: ['Current Profile', None, 'bullseye-arrow'],
-    ATTR_CURRENT_SCENE: ['Current Scene', None, 'movie']    
-}
 
 
 def setup_platform(hass, config, add_entities, discovery_info=None):
@@ -73,13 +56,13 @@ class HomeAutomationManagerSensor(Entity):
         
         self._sensor_name = sensor_name
         self._sensor_type = sensor_type
-        self._name = '{} {}'.format(DOMAIN.upper(), self._sensor_name)
-        self._icon = 'mdi:{}'.format(sensor_icon)
+        self._name = f'{DOMAIN.upper()} {self._sensor_name}'
+        self._icon = f'mdi:{sensor_icon}'
         self._attributes = None
         self._data_provider_state = None
         self._data_provider_attributes = None
         
-        sensor_id = '{}.{}'.format(SENSOR_DOMAIN, self._name)
+        sensor_id = f'{SENSOR_DOMAIN}.{self._name}'
         state_obj = hass.states.get(sensor_id)
 
         state = None
@@ -113,7 +96,7 @@ class HomeAutomationManagerSensor(Entity):
     @property
     def device_class(self):
         """Return the class of this sensor."""
-        return DEFAULT_DEVICE_CLASS
+        return SENSOR_DEFAULT_DEVICE_CLASS
 
     @property
     def state(self):
