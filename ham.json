@@ -2,16 +2,16 @@
     "ham": {
         "version": "1.0.0",
         "local_location": "/custom_components/ham/__init__.py",
-        "remote_location": "https://raw.githubusercontent.com/elad-bar/ha-ham/master/custom_components/ham/__init__.py",
-        "visit_repo": "https://github.com/elad-bar/ha-ham",
-        "changelog": "https://github.com/elad-bar/ha-ham/releases/latest",
+        "remote_location": "https://raw.githubusercontent.com/elad-bar/ha-custom-components/master/custom_components/ham/__init__.py",
+        "visit_repo": "https://github.com/elad-bar/ha-custom-components",
+        "changelog": "https://github.com/elad-bar/ha-custom-components/releases/latest",
         "resources": [
-            "https://raw.githubusercontent.com/elad-bar/ha-ham/master/custom_components/ham/binary_sensor.py",
-            "https://raw.githubusercontent.com/elad-bar/ha-ham/master/custom_components/ham/configuration_transformer.py",
-            "https://raw.githubusercontent.com/elad-bar/ha-ham/master/custom_components/ham/const.py",
-            "https://raw.githubusercontent.com/elad-bar/ha-ham/master/custom_components/ham/ham_data.py",
-            "https://raw.githubusercontent.com/elad-bar/ha-ham/master/custom_components/ham/sensor.py",
-            "https://raw.githubusercontent.com/elad-bar/ha-ham/master/custom_components/ham/services.yaml"
+            "https://raw.githubusercontent.com/elad-bar/ha-custom-components/master/custom_components/ham/binary_sensor.py",
+            "https://raw.githubusercontent.com/elad-bar/ha-custom-components/master/custom_components/ham/configuration_transformer.py",
+            "https://raw.githubusercontent.com/elad-bar/ha-custom-components/master/custom_components/ham/const.py",
+            "https://raw.githubusercontent.com/elad-bar/ha-custom-components/master/custom_components/ham/ham_data.py",
+            "https://raw.githubusercontent.com/elad-bar/ha-custom-components/master/custom_components/ham/sensor.py",
+            "https://raw.githubusercontent.com/elad-bar/ha-custom-components/master/custom_components/ham/services.yaml"
         ]
     }
 }
