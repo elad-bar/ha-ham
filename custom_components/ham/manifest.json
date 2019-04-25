@@ -1,7 +1,7 @@
 {
     "domain": "ham",
     "name": "Home Automation Manager",
-    "documentation": "https://github.com/elad-bar/ha-custom-components/blob/master/HAM.md",
+    "documentation": "https://github.com/elad-bar/ha-ham/blob/master/README.md",
     "dependencies": ["device_tracker", "input_boolean", "switch"],
     "codeowners": ["@elad-bar"],
     "requirements": []
