@@ -380,10 +380,12 @@ class HomeAutomationManagerData:
 
         if self._scenes is not None and current_scene in self._scenes:
             scene = self._scenes[current_scene]
-            scene_script = scene[CONF_SCENE_SCRIPT]
 
-            script_invoker = Script(self._hass, scene_script)
-            script_invoker.run()
+            if CONF_SCENE_SCRIPT in scene:
+                scene_script = scene[CONF_SCENE_SCRIPT]
+
+                script_invoker = Script(self._hass, scene_script)
+                script_invoker.run()
 
     def update(self):
         _LOGGER.debug("update - Start")
