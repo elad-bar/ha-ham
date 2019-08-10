@@ -105,9 +105,8 @@ class HomeAutomationManagerData:
             for scene_key in self._scenes:
                 scene = self._scenes[scene_key]
                 scene_name = scene[CONF_SCENE_NAME]
-                scripts = scene[CONF_SCENE_SCRIPT]
 
-                _LOGGER.debug(f'Validate Scene {scene_name} - scripts: {scripts}')
+                _LOGGER.debug(f'Validate Scene {scene_name}')
 
         return True
 

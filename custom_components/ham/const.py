@@ -6,7 +6,7 @@ from homeassistant.helpers import config_validation as cv
 
 from datetime import timedelta
 
-VERSION = '1.0.4'
+VERSION = '1.0.5'
 
 DOMAIN = 'ham'
 DATA_HAM = 'data_ham'
