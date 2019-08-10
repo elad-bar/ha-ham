@@ -6,7 +6,7 @@ from homeassistant.helpers import config_validation as cv
 
 from datetime import timedelta
 
-VERSION = '1.0.3'
+VERSION = '1.0.4'
 
 DOMAIN = 'ham'
 DATA_HAM = 'data_ham'
@@ -94,7 +94,7 @@ SENSOR_TYPES = {
 SCENE_SCHEMA = vol.Schema({
     vol.Required(CONF_SCENE_NAME):
         vol.In(SCENES_TYPES),
-    vol.Required(CONF_SCENE_SCRIPT): cv.SCRIPT_SCHEMA
+    vol.Optional(CONF_SCENE_SCRIPT): cv.SCRIPT_SCHEMA
 })
 
 PART_SCHEMA = vol.Schema({
