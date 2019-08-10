@@ -166,7 +166,10 @@ class HomeAutomationManagerConfigurationTransformer:
         try:
             for scene in self._raw_scenes:
                 scene_name = scene[CONF_SCENE_NAME]
-                scene_scripts = scene[CONF_SCENE_SCRIPT]
+                scene_scripts = None
+
+                if CONF_SCENE_SCRIPT in scene:
+                    scene_scripts = scene[CONF_SCENE_SCRIPT]
 
                 if scene_name not in SCENES_TYPES:
                     self.log_warn(f'Scene {scene_name} is not invalid')
